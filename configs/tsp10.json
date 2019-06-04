@@ -1,0 +1,35 @@
+{
+  "expt_name": "tsp10",
+  "gpu_id": "0",
+
+  "train_filepath": "./data/tsp10_train_concorde.txt",
+  "val_filepath": "./data/tsp10_val_concorde.txt",
+  "test_filepath": "./data/tsp10_test_concorde.txt",
+
+  "num_nodes": 10,
+  "num_neighbors": -1,
+
+  "node_dim": 2,
+  "voc_nodes_in": 2,
+  "voc_nodes_out": 2,
+  "voc_edges_in": 3,
+  "voc_edges_out": 2,
+
+  "beam_size": 1280,
+
+  "hidden_dim": 300,
+  "num_layers": 30,
+  "mlp_layers": 3,
+  "aggregation": "mean",
+
+  "max_epochs": 1500,
+  "val_every": 5,
+  "test_every": 100,
+
+  "batch_size": 20,
+  "batches_per_epoch": 500,
+  "accumulation_steps": 1,
+
+  "learning_rate": 0.001,
+  "decay_rate": 1.01
+}
