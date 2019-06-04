@@ -65,8 +65,11 @@ Set `viz_mode = True` in the first cell of `main.ipynb` to toggle Visualization 
 
 ### Running in Script Mode
 1. Set `notebook_mode = False` and `viz_mode = False` in the first cell of `main.ipynb`.
-2. Convert from .ipynb to .py: `jupyter nbconvert --to python main.ipynb`
-3. Run the script (pass path of configuration file as arguement): `python main.py --config <path-to-config.json>`
+2. Convert from .ipynb to .py and run the script (pass path of config file as arguement):
+```sh
+jupyter nbconvert --to python main.ipynb 
+python main.py --config <path-to-config.json>
+```
 
 ### Splitting datasets into Training and Validation sets
 For TSP10, TSP20 and TSP30 datasets, everything is good to go.
