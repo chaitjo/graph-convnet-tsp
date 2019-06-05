@@ -1,7 +1,7 @@
-# An Efficient Graph Convolutional Network for the Travelling Salesman Problem
+# An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem
 
 This repository contains code for the paper 
-[**"An Efficient Graph Convolutional Network for the Travelling Salesman Problem"**](https://arxiv.org/abs/1906.01227)
+[**"An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem"**](https://arxiv.org/abs/1906.01227)
 by Chaitanya K. Joshi, Thomas Laurent and Xavier Bresson.
 
 We introduce a new learning-based approach for approximately solving the
