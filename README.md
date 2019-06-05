@@ -1,7 +1,7 @@
 # An Efficient Graph Convolutional Network for the Travelling Salesman Problem
 
 This repository contains code for the paper 
-**"An Efficient Graph Convolutional Network for the Travelling Salesman Problem"**
+[**"An Efficient Graph Convolutional Network for the Travelling Salesman Problem"**](https://arxiv.org/abs/1906.01227)
 by Chaitanya K. Joshi, Thomas Laurent and Xavier Bresson.
 
 We introduce a new learning-based approach for approximately solving the
@@ -26,12 +26,17 @@ Configuration parameters for notebooks and scripts are passed as `.json` files a
 
 ## Pre-requisite Downloads
 
-1. Download TSP datasets from [this link](https://drive.google.com/open?id=1-5W-S5e7CKsJ9uY9uVXIyxgbcZZNYBrp): Extract the `.tar.gz` file and place each `.txt` file in the `/data` directory. (We provide TSP10, TSP20, TSP30, TSP50 and TSP100.) 
-2. Download pre-trained model checkpoints from [this link](https://drive.google.com/open?id=1qmk1_5a8XT_hrOV_i3uHM9tMVnZBFEAF): Extract the `.tar.gz` file and place each directory in the `/logs` directory. (We provide TSP20, TSP50 and TSP100 models.)
+#### TSP Datasets
+Download TSP datasets from [this link](https://drive.google.com/open?id=1-5W-S5e7CKsJ9uY9uVXIyxgbcZZNYBrp): 
+Extract the `.tar.gz` file and place each `.txt` file in the `/data` directory. (We provide TSP10, TSP20, TSP30, TSP50 and TSP100.) 
+
+#### Pre-trained Models
+Download pre-trained model checkpoints from [this link](https://drive.google.com/open?id=1qmk1_5a8XT_hrOV_i3uHM9tMVnZBFEAF): 
+Extract the `.tar.gz` file and place each directory in the `/logs` directory. (We provide TSP20, TSP50 and TSP100 models.)
 
 ## Usage
 
-### Installation
+#### Installation
 Step-by-step guide for local installation using a Terminal (Mac/Linux) or Git Bash (Windows):
 ```sh
 # Install [Anaconda 3](https://www.anaconda.com/) for managing Python packages and environments.
@@ -55,7 +60,7 @@ pip3 install tensorboardx==1.5 fastprogress==0.1.18
 conda install -c conda-forge jupyterlab
 ```
 
-### Running in Notebook/Visualization Mode
+#### Running in Notebook/Visualization Mode
 Launch Jupyter Lab and execute/modify `main.ipynb` cell-by-cell in Notebook Mode.
 ```sh
 jupyter lab
@@ -63,15 +68,15 @@ jupyter lab
 
 Set `viz_mode = True` in the first cell of `main.ipynb` to toggle Visualization Mode.
 
-### Running in Script Mode
-1. Set `notebook_mode = False` and `viz_mode = False` in the first cell of `main.ipynb`.
-2. Convert from .ipynb to .py and run the script (pass path of config file as arguement):
+#### Running in Script Mode
+Set `notebook_mode = False` and `viz_mode = False` in the first cell of `main.ipynb`.
+Then convert the notebook from `.ipynb` to `.py` and run the script (pass path of config file as arguement):
 ```sh
 jupyter nbconvert --to python main.ipynb 
 python main.py --config <path-to-config.json>
 ```
 
-### Splitting datasets into Training and Validation sets
+#### Splitting datasets into Training and Validation sets
 For TSP10, TSP20 and TSP30 datasets, everything is good to go.
 For TSP50 and TSP100, the 1M training set needs to be split into 10K validation samples and 999K training samples.
 Use the `split_train_val.ipynb` notebook to do this through Jupyter Lab.
