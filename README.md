@@ -55,7 +55,7 @@ source activate gcn-tsp-env
 
 # Install all dependencies and Jupyter Lab (for using notebooks).
 conda install pytorch=0.4.1 cuda90 -c pytorch
-conda install numpy==1.15.4 scipy==1.1.0 matplotlib==3.0.2 seaborn==0.9.0 pandas==0.24.2 networkx==2.2 scikit-learn==0.20.2 tensorflow-gpu==1.12.0 tensorboard==1.12.0
+conda install numpy==1.15.4 scipy==1.1.0 matplotlib==3.0.2 seaborn==0.9.0 pandas==0.24.2 networkx==2.2 scikit-learn==0.20.2 tensorflow-gpu==1.12.0 tensorboard==1.12.0 Cython
 pip3 install tensorboardx==1.5 fastprogress==0.1.18
 conda install -c conda-forge jupyterlab
 ```
@@ -77,6 +77,27 @@ python main.py --config <path-to-config.json>
 ```
 
 #### Splitting datasets into Training and Validation sets
-For TSP10, TSP20 and TSP30 datasets, everything is good to go.
+For TSP10, TSP20 and TSP30 datasets, everything is good to go once you download and extract the files.
 For TSP50 and TSP100, the 1M training set needs to be split into 10K validation samples and 999K training samples.
-Use the `split_train_val.ipynb` notebook to do this through Jupyter Lab.
+Use the `split_train_val.py` script to do so.
+For consistency, the script uses the first 10K samples in the 1M file as the validation set and the remaining 999K as the training set.
+
+```sh
+cd data
+python split_train_val.py --num_nodes <num-nodes>
+```
+
+### Generating new data
+New TSP data can be generated using the [Concorde solver](https://github.com/jvkersch/pyconcorde).
+
+```sh
+# Install the pyConcorde library in the /data directory
+cd data
+git clone https://github.com/jvkersch/pyconcorde
+cd pyconcorde
+pip install -e .
+cd ..
+
+# Run the data generation script
+python generate_tsp_concorde.py --num_samples <num-sample> --num_nodes <num-nodes>
+```
