@@ -87,7 +87,7 @@ cd data
 python split_train_val.py --num_nodes <num-nodes>
 ```
 
-### Generating new data
+#### Generating new data
 New TSP data can be generated using the [Concorde solver](https://github.com/jvkersch/pyconcorde).
 
 ```sh
