@@ -15,6 +15,15 @@ class ResidualGatedGCNModel(nn.Module):
     """
 
     def __init__(self, config, dtypeFloat, dtypeLong):
+        """
+        Initialize the graph.
+
+        Args:
+            self: (todo): write your description
+            config: (todo): write your description
+            dtypeFloat: (todo): write your description
+            dtypeLong: (todo): write your description
+        """
         super(ResidualGatedGCNModel, self).__init__()
         self.dtypeFloat = dtypeFloat
         self.dtypeLong = dtypeLong

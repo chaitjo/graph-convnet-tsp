@@ -10,6 +10,13 @@ class BatchNormNode(nn.Module):
     """
 
     def __init__(self, hidden_dim):
+        """
+        Initialize the batch.
+
+        Args:
+            self: (todo): write your description
+            hidden_dim: (int): write your description
+        """
         super(BatchNormNode, self).__init__()
         self.batch_norm = nn.BatchNorm1d(hidden_dim, track_running_stats=False)
 
@@ -32,6 +39,13 @@ class BatchNormEdge(nn.Module):
     """
 
     def __init__(self, hidden_dim):
+        """
+        Initialize the batch.
+
+        Args:
+            self: (todo): write your description
+            hidden_dim: (int): write your description
+        """
         super(BatchNormEdge, self).__init__()
         self.batch_norm = nn.BatchNorm2d(hidden_dim, track_running_stats=False)
 
@@ -60,6 +74,14 @@ class NodeFeatures(nn.Module):
     """
     
     def __init__(self, hidden_dim, aggregation="mean"):
+        """
+        Initialize the network.
+
+        Args:
+            self: (todo): write your description
+            hidden_dim: (int): write your description
+            aggregation: (todo): write your description
+        """
         super(NodeFeatures, self).__init__()
         self.aggregation = aggregation
         self.U = nn.Linear(hidden_dim, hidden_dim, True)
@@ -92,6 +114,13 @@ class EdgeFeatures(nn.Module):
     """
 
     def __init__(self, hidden_dim):
+        """
+        Initialize the network.
+
+        Args:
+            self: (todo): write your description
+            hidden_dim: (int): write your description
+        """
         super(EdgeFeatures, self).__init__()
         self.U = nn.Linear(hidden_dim, hidden_dim, True)
         self.V = nn.Linear(hidden_dim, hidden_dim, True)
@@ -118,6 +147,14 @@ class ResidualGatedGCNLayer(nn.Module):
     """
 
     def __init__(self, hidden_dim, aggregation="sum"):
+        """
+        Initialize the graph.
+
+        Args:
+            self: (todo): write your description
+            hidden_dim: (int): write your description
+            aggregation: (todo): write your description
+        """
         super(ResidualGatedGCNLayer, self).__init__()
         self.node_feat = NodeFeatures(hidden_dim, aggregation)
         self.edge_feat = EdgeFeatures(hidden_dim)
@@ -159,6 +196,15 @@ class MLP(nn.Module):
     """
 
     def __init__(self, hidden_dim, output_dim, L=2):
+        """
+        Initialize the network.
+
+        Args:
+            self: (todo): write your description
+            hidden_dim: (int): write your description
+            output_dim: (int): write your description
+            L: (int): write your description
+        """
         super(MLP, self).__init__()
         self.L = L
         U = []

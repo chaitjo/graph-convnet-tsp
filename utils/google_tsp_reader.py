@@ -9,6 +9,13 @@ class DotDict(dict):
     """
 
     def __init__(self, **kwds):
+        """
+        Initialize the object.
+
+        Args:
+            self: (todo): write your description
+            kwds: (todo): write your description
+        """
         self.update(kwds)
         self.__dict__ = self
 
@@ -35,6 +42,12 @@ class GoogleTSPReader(object):
         self.max_iter = (len(self.filedata) // batch_size)
 
     def __iter__(self):
+        """
+        Iterate over the results.
+
+        Args:
+            self: (todo): write your description
+        """
         for batch in range(self.max_iter):
             start_idx = batch * self.batch_size
             end_idx = (batch + 1) * self.batch_size
