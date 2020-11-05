@@ -43,17 +43,47 @@ class Settings(dict):
     """
 
     def __init__(self, config_dict):
+        """
+        Initialize the configuration.
+
+        Args:
+            self: (todo): write your description
+            config_dict: (dict): write your description
+        """
         super().__init__()
         for key in config_dict:
             self[key] = config_dict[key]
 
     def __getattr__(self, attr):
+        """
+        Returns the value of an attribute
+
+        Args:
+            self: (todo): write your description
+            attr: (str): write your description
+        """
         return self[attr]
 
     def __setitem__(self, key, value):
+        """
+        Sets the value of the key.
+
+        Args:
+            self: (todo): write your description
+            key: (str): write your description
+            value: (str): write your description
+        """
         return super().__setitem__(key, value)
 
     def __setattr__(self, key, value):
+        """
+        Sets the value of a key.
+
+        Args:
+            self: (todo): write your description
+            key: (str): write your description
+            value: (todo): write your description
+        """
         return self.__setitem__(key, value)
 
     __delattr__ = dict.__delitem__
