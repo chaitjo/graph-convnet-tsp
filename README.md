@@ -1,5 +1,7 @@
 # An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem
 
+>**:rocket: Update:** If you are interested in this work, you may be interested in [**our latest paper**](https://arxiv.org/abs/2006.07054) and [**up-to-date codebase**](https://github.com/chaitjo/learning-tsp) bringing together several architectures and learning paradigms for learning-driven TSP solvers under one pipeline.
+
 This repository contains code for the paper 
 [**"An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem"**](https://arxiv.org/abs/1906.01227)
 by Chaitanya K. Joshi, Thomas Laurent and Xavier Bresson.
@@ -37,7 +39,8 @@ Extract the `.tar.gz` file and place each directory in the `/logs` directory. (W
 ## Usage
 
 #### Installation
-Step-by-step guide for local installation using a Terminal (Mac/Linux) or Git Bash (Windows):
+We ran our code on Ubuntu 16.04, using Python 3.6.7, PyTorch 0.4.1 and CUDA 9.0.
+Step-by-step guide for local installation using a Terminal (Mac/Linux) or Git Bash (Windows) via Anaconda:
 ```sh
 # Install [Anaconda 3](https://www.anaconda.com/) for managing Python packages and environments.
 curl -o ~/miniconda.sh -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
