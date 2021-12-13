@@ -40,6 +40,9 @@ Extract the `.tar.gz` file and place each directory in the `/logs` directory. (W
 
 #### Installation
 We ran our code on Ubuntu 16.04, using Python 3.6.7, PyTorch 0.4.1 and CUDA 9.0.
+
+> **Note:** This codebase was developed for a rather outdated version of PyTorch. Attempting to run the code with PyTorch 1.x may need further modifications, e.g. see [this issue](https://github.com/chaitjo/graph-convnet-tsp/issues/16).
+
 Step-by-step guide for local installation using a Terminal (Mac/Linux) or Git Bash (Windows) via Anaconda:
 ```sh
 # Install [Anaconda 3](https://www.anaconda.com/) for managing Python packages and environments.
